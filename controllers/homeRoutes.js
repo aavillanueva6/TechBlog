@@ -4,7 +4,8 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // TODO: fix query to pull all required data (username associated with post)
+    // Get all posts and JOIN with user data
     const postData = await Post.findAll();
 
     // Serialize data so the template can read it
@@ -18,9 +19,10 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/dashboard', async (req, res) => {
-  // need to add login verification
+  // TODO: need to add login verification
   try {
-    // Get all projects and JOIN with user data
+    // TODO: add logic to only pull posts by logged in user
+    // Get all posts for the logged in user
     const postData = await Post.findAll();
 
     // Serialize data so the template can read it

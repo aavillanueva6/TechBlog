@@ -1,6 +1,7 @@
+<div class="customCardContainer">
 {{#each posts as |post|}}
 
-<div class="card mt-4" id="{{post.id}}">
+<div class="card mt-4" data-id="{{post.id}}">
   <header class="card-header is-justify-content-space-between">
     <div>
       <p class="card-header-title">
@@ -21,3 +22,6 @@
 </div>
 
 {{/each}}
+</div>
+
+<script src="/js/homepage.js"></script>

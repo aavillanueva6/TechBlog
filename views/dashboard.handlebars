@@ -1,16 +1,20 @@
-{{#each posts as |post|}}
-<div class="card mt-4" id="{{post.id}}">
-  <header class="card-header is-justify-content-space-between">
-    <div>
-      <p class="card-header-title">
-        {{post.title}}
-      </p>
-    </div>
-    <div>
-      <p class="card-header-title is-italic has-text-weight-normal">
-        {{format_date post.date_created}}
-      </p>
-    </div>
-  </header>
+<div class="customCardContainer">
+  {{#each posts as |post|}}
+  <div class="card mt-4" data-id="{{post.id}}">
+    <header class="card-header is-justify-content-space-between">
+      <div>
+        <p class="card-header-title">
+          {{post.title}}
+        </p>
+      </div>
+      <div>
+        <p class="card-header-title is-italic has-text-weight-normal">
+          {{format_date post.date_created}}
+        </p>
+      </div>
+    </header>
+  </div>
+  {{/each}}
 </div>
-{{/each}}
+
+<script src="/js/dashboard.js"></script>

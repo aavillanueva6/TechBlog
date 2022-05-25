@@ -73,8 +73,18 @@ router.get('/singlepost/:id', async (req, res) => {
   res.render('singlePost', post);
 });
 
-router.get('/editpost/:id', (req, res) => {
-  res.render('editPost');
+router.get('/editpost/:id', async (req, res) => {
+  const postData = await Post.findByPk(req.params.id, {
+    include: [
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  });
+  const post = postData.get({ plain: true });
+  console.log(post);
+  res.render('editPost', post);
 });
 
 module.exports = router;

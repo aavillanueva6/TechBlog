@@ -1,0 +1,20 @@
+
+<div class="card mt-4" id="{{id}}">
+  <header class="card-header is-justify-content-space-between">
+    <div>
+      <p class="card-header-title">
+        {{title}}
+      </p>
+    </div>
+    <div>
+      <p class="card-header-title is-italic has-text-weight-normal">
+        By: {{user.username}} on {{format_date date_created}}
+      </p>
+    </div>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {{body}}
+    </div>
+  </div>
+</div>

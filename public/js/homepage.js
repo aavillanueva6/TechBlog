@@ -1,12 +1,6 @@
 const cardContainer = document.querySelector('.customCardContainer');
 
 cardContainer.addEventListener('click', (event) => {
-  const target = event.target;
-  const dataIdDiv = target.closest('[data-id]');
-  const id = dataIdDiv.getAttribute('data-id');
-
-  console.log(target);
-  console.log(event);
-  console.log(id);
+  const id = event.target.closest('[data-id]').getAttribute('data-id');
   window.location.href = `/singlepost/${id}`;
 });

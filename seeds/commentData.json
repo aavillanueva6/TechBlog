@@ -1,0 +1,17 @@
+[
+  {
+    "body": "Body of Seed comment on post 1 body Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Sed porttitor lectus nibh.",
+    "user_id": 1,
+    "post_id": 1
+  },
+  {
+    "body": "Body of Seed comment on post 1 Donec rutrum congue leo eget malesuada. Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat. Cras ultricies ligula sed magna dictum porta.",
+    "user_id": 3,
+    "post_id": 1
+  },
+  {
+    "body": "Body of Seed comment on post 2 Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in, elementum id enim.",
+    "user_id": 2,
+    "post_id": 2
+  }
+]

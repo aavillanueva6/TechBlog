@@ -75,18 +75,12 @@ router.get('/singlepost/:id', async (req, res) => {
 
   const post = postData.get({ plain: true });
   const comments = post.comments;
-  if (comments.length !== 0) {
-    console.log('there are comments');
-    await post.comments.forEach((element) => {
-      const username = User.findByPk(element.user_id);
-      // element.user_id = username;
-      console.log(username);
-    });
-  } else {
-    console.log("there aren't comments");
-  }
-  console.log(post.comments);
-  res.render('singlePost', post);
+  console.log(post);
+  console.log(comments);
+  res.render('singlePost', {
+    post,
+    comments,
+  });
 });
 
 router.get('/editpost/:id', async (req, res) => {

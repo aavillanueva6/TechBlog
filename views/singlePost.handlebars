@@ -3,32 +3,56 @@
   <header class="card-header is-justify-content-space-between">
     <div>
       <p class="card-header-title">
-        {{title}}
+        {{post.title}}
       </p>
     </div>
     <div>
       <p class="card-header-title is-italic has-text-weight-normal">
-        By: {{user.username}} on {{format_date date_created}}
+        By: {{post.user.username}} on {{format_date post.date_created}}
       </p>
     </div>
   </header>
   <div class="card-content">
     <div class="content">
-      {{body}}
+      {{post.body}}
     </div>
   </div>
 </div>
 
-<div class="field">
-  <label class="label">Add a comment</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Post Body" rows="4"></textarea>
+{{#if comments}}
+<div class="container is-fluid">
+  <div class="notification mt-4 mb-0 is-primary has-text-weight-bold is-size-5 py-2">Comments</div>
+  {{#each comments}}
+  <div class="card mt-2">
+    <header class="card-header is-justify-content-end"> 
+      <div>
+        <p class="card-header-title is-italic has-text-weight-normal">
+          By: {{user.username}} on {{ format_date date_created}}
+        </p>
+      </div>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{body}}
+      </div>
+    </div>
   </div>
+  {{/each}}
 </div>
-<div class="field">
-  <p class="control">
-    <button class="button is-success">
-      Submit
-    </button>
-  </p>
+{{/if}}
+
+<div class="container is-fluid">
+  <div class="field mt-2">
+    <label class="label">Add a comment</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Comment" rows="4"></textarea>
+    </div>
+  </div>
+  <div class="field">
+    <p class="control">
+      <button class="button is-success">
+        Submit
+      </button>
+    </p>
+  </div>
 </div>

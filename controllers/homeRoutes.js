@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -66,10 +66,26 @@ router.get('/singlepost/:id', async (req, res) => {
         model: User,
         attributes: ['username'],
       },
+      {
+        model: Comment,
+        include: [User],
+      },
     ],
   });
+
   const post = postData.get({ plain: true });
-  console.log(post);
+  const comments = post.comments;
+  if (comments.length !== 0) {
+    console.log('there are comments');
+    await post.comments.forEach((element) => {
+      const username = User.findByPk(element.user_id);
+      // element.user_id = username;
+      console.log(username);
+    });
+  } else {
+    console.log("there aren't comments");
+  }
+  console.log(post.comments);
   res.render('singlePost', post);
 });
 

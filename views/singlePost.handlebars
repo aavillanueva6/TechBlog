@@ -1,5 +1,5 @@
 
-<div class="card mt-4" id="{{id}}">
+<div class="card mt-4" id="{{post.id}}">
   <header class="card-header is-justify-content-space-between">
     <div>
       <p class="card-header-title">
@@ -41,18 +41,21 @@
 </div>
 {{/if}}
 
+{{#if logged_in}}
 <div class="container is-fluid">
   <div class="field mt-2">
     <label class="label">Add a comment</label>
     <div class="control">
-      <textarea class="textarea" placeholder="Comment" rows="4"></textarea>
+      <textarea class="textarea" placeholder="Comment" rows="4" id="commentBody"></textarea>
     </div>
   </div>
   <div class="field">
     <p class="control">
-      <button class="button is-success">
+      <button class="button is-success" data-post-id="{{post.id}}" id="comment-submit-btn">
         Submit
       </button>
     </p>
   </div>
 </div>
+<script src="/js/postComment.js"></script>
+{{/if}}

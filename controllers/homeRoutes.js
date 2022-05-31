@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   // TODO: need to add login verification
   try {
     // Get all posts for the logged in user

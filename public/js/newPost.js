@@ -4,7 +4,6 @@ const newPost = async (event) => {
   const title = document.querySelector('#newPostTitle').value.trim();
   const body = document.querySelector('#newPostBody').value.trim();
 
-  console.log(title, body);
   if (title && body) {
     const response = await fetch('/api/posts', {
       method: 'POST',

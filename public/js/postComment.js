@@ -4,7 +4,6 @@ const newComment = async (event) => {
   const body = document.querySelector('#commentBody').value.trim();
   const post_id = event.target.getAttribute('data-post-id');
 
-  console.log(body);
   if (body) {
     const response = await fetch('/api/comments', {
       method: 'POST',

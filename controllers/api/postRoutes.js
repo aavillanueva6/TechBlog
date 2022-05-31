@@ -37,7 +37,6 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    console.log(req.session.user_id);
     const response = await Post.destroy({
       where: {
         id: req.params.id,

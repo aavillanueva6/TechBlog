@@ -4,8 +4,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    console.log(req.session.logged_in);
-
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
       include: [
@@ -83,8 +81,6 @@ router.get('/singlepost/:id', async (req, res) => {
 
   const post = postData.get({ plain: true });
   const comments = post.comments;
-  console.log(post);
-  console.log(comments);
   res.render('singlePost', {
     post,
     comments,
@@ -102,7 +98,6 @@ router.get('/editpost/:id', async (req, res) => {
     ],
   });
   const post = postData.get({ plain: true });
-  console.log(post);
   res.render('editPost', { post, logged_in: req.session.logged_in });
 });
 

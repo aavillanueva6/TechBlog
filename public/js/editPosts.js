@@ -4,7 +4,6 @@ const editPost = async (event) => {
   const title = document.querySelector('#postTitle').value.trim();
   const body = document.querySelector('#postBody').value.trim();
   const id = event.target.getAttribute('data-id');
-  console.log(id);
   if (title && body) {
     const response = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
@@ -24,7 +23,6 @@ const deletePost = async (event) => {
   event.preventDefault();
 
   const id = event.target.getAttribute('data-id');
-  console.log(id);
   const response = await fetch(`/api/posts/${id}`, {
     method: 'DELETE',
   });

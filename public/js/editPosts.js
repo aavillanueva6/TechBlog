@@ -3,9 +3,10 @@ const editPost = async (event) => {
 
   const title = document.querySelector('#postTitle').value.trim();
   const body = document.querySelector('#postBody').value.trim();
-
+  const id = event.target.getAttribute('data-id');
+  console.log(id);
   if (title && body) {
-    const response = await fetch(`/api/users/${id}`, {
+    const response = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ title, body }),
       headers: { 'Content-Type': 'application/json' },

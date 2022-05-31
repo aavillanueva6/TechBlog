@@ -1,8 +1,8 @@
 
-<div class="card mt-4" id="{{id}}">
+<div class="card mt-4" id="{{post.id}}">
   <div class="field">
     <p class="control has-icons-left has-icons-right">
-      <input class="input" type="text" value="{{title}}" id="postTitle">
+      <input class="input" type="text" value="{{post.title}}" id="postTitle">
       <span class="icon is-small is-left">
         <i class="fas fa-heading"></i>
       </span>
@@ -10,20 +10,20 @@
   </div>
   <div class="field">
     <div class="control">
-      <textarea class="textarea" id="postBody">{{body}}</textarea>
+      <textarea class="textarea" id="postBody">{{post.body}}</textarea>
     </div>
   </div>
 </div>
 <div class="field mt-4">
   <p class="control">
-    <button class="button is-success" id="edit-post-submit">
+    <button class="button is-success" id="edit-post-submit" data-id="{{post.id}}">
       Update Post
     </button>
   </p>
 </div>
 <div class="field">
   <p class="control">
-    <button class="button is-danger" id="delete-post-submit" data-id="{{id}}">
+    <button class="button is-danger" id="delete-post-submit" data-id="{{post.id}}">
       Delete Post
     </button>
   </p>

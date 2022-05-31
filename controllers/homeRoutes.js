@@ -29,9 +29,12 @@ router.get('/', async (req, res) => {
 router.get('/dashboard', async (req, res) => {
   // TODO: need to add login verification
   try {
-    // TODO: add logic to only pull posts by logged in user
     // Get all posts for the logged in user
-    const postData = await Post.findAll();
+    const postData = await Post.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
 
     // Serialize data so the template can read it
     const posts = postData.map((element) => element.get({ plain: true }));
@@ -61,7 +64,7 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/newpost', (req, res) => {
-  res.render('newPost');
+  res.render('newPost', { logged_in: req.session.logged_in });
 });
 
 router.get('/singlepost/:id', async (req, res) => {
@@ -85,6 +88,7 @@ router.get('/singlepost/:id', async (req, res) => {
   res.render('singlePost', {
     post,
     comments,
+    logged_in: req.session.logged_in,
   });
 });
 
@@ -99,7 +103,7 @@ router.get('/editpost/:id', async (req, res) => {
   });
   const post = postData.get({ plain: true });
   console.log(post);
-  res.render('editPost', post);
+  res.render('editPost', { post, logged_in: req.session.logged_in });
 });
 
 module.exports = router;

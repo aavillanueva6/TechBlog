@@ -4,7 +4,8 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // TODO: fix query to pull all required data (username associated with post)
+    console.log(req.session.logged_in);
+
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
       include: [
@@ -16,10 +17,10 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const posts = postData.map((element) => element.get({ plain: true }));
+    const posts = await postData.map((element) => element.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { posts });
+    res.render('homepage', { posts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -36,7 +37,7 @@ router.get('/dashboard', async (req, res) => {
     const posts = postData.map((element) => element.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('dashboard', { posts });
+    res.render('dashboard', { posts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -45,13 +46,17 @@ router.get('/dashboard', async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/dashboard');
     return;
   }
   res.render('login');
 });
 
 router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
   res.render('signup');
 });
 

@@ -1,7 +1,7 @@
 {
   "name": "techblog",
   "version": "1.0.0",
-  "description": "",
+  "description": "A technology blog",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/aavillanueva6/TechBlog.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alejandro Villanueva",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aavillanueva6/TechBlog/issues"

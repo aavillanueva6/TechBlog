@@ -2,7 +2,7 @@
 {{#each posts as |post|}}
 
 <div class="card mt-4" data-id="{{post.id}}">
-  <header class="card-header is-justify-content-space-between">
+  <header class="card-header is-justify-content-space-between has-background-warning">
     <div>
       <p class="card-header-title">
         {{post.title}}
@@ -14,7 +14,7 @@
       </p>
     </div>
   </header>
-  <div class="card-content">
+  <div class="card-content has-background-warning-light">
     <div class="content">
       {{post.body}}
     </div>

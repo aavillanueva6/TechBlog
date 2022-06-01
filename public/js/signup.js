@@ -20,3 +20,9 @@ const signup = async (event) => {
 };
 
 document.querySelector('#signup-submit').addEventListener('click', signup);
+
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'Enter') {
+    signup(event);
+  }
+});

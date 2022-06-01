@@ -17,9 +17,17 @@ const login = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/dashboard');
     } else {
+      // add a toast instead of using the alert.  Need to figure this one out still
+      // bulmaToast.toast({ message: 'Hello There' });
       alert(response.statusText);
     }
   }
 };
 
 document.querySelector('#login-submit').addEventListener('click', login);
+
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'Enter') {
+    login(event);
+  }
+});

@@ -33,12 +33,19 @@ router.get('/dashboard', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
+    const userData = await User.findByPk(req.session.user_id);
+    const username = userData.get({ plain: true }).username;
+    console.log(username);
 
     // Serialize data so the template can read it
     const posts = postData.map((element) => element.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('dashboard', { posts, logged_in: req.session.logged_in });
+    res.render('dashboard', {
+      posts,
+      logged_in: req.session.logged_in,
+      username,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

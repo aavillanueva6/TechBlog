@@ -34,7 +34,16 @@ const deletePost = async (event) => {
   }
 };
 
+const cancelEdit = async (event) => {
+  event.preventDefault();
+
+  document.location.replace('/dashboard');
+};
+
 document.querySelector('#edit-post-submit').addEventListener('click', editPost);
 document
   .querySelector('#delete-post-submit')
   .addEventListener('click', deletePost);
+document
+  .querySelector('#cancel-post-submit')
+  .addEventListener('click', cancelEdit);

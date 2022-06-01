@@ -7,3 +7,10 @@ body {
 #wrapper {
   flex: 1;
 }
+
+.aav-header {
+  font-family: "Nunito", sans-serif;
+  font-weight:900;
+  font-size:2rem;
+  color:#577590;
+}

@@ -24,14 +24,14 @@
   <div class="notification mt-4 mb-0 is-primary has-text-weight-bold is-size-5 py-2">Comments</div>
   {{#each comments}}
   <div class="card mt-2">
-    <header class="card-header is-justify-content-end"> 
+    <header class="card-header is-justify-content-end has-background-success"> 
       <div>
         <p class="card-header-title is-italic has-text-weight-normal">
           By: {{user.username}} on {{ format_date date_created}}
         </p>
       </div>
     </header>
-    <div class="card-content">
+    <div class="card-content has-background-success-light">
       <div class="content">
         {{body}}
       </div>
@@ -44,7 +44,7 @@
 {{#if logged_in}}
 <div class="container is-fluid">
   <div class="field mt-2">
-    <label class="label">Add a comment</label>
+    <div class="notification mt-4 mb-2 is-primary has-text-weight-bold is-size-6 py-2">Add a comment</div>
     <div class="control">
       <textarea class="textarea" placeholder="Comment" rows="4" id="commentBody"></textarea>
     </div>

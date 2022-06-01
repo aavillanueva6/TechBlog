@@ -14,6 +14,7 @@ $l_teal: #43AA8B;
 $l_bluegray: #4D908E;
 $d_gray: #577590;
 $b_blue: #277DA1;
+$c-primary-light: #d4f1ff;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
@@ -24,6 +25,7 @@ $info:$l_olive;
 $link: $l_salmon;
 $light: $l_olive;
 $warning: $l_olive;
+$dark: $l_orange;
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
 
@@ -32,16 +34,15 @@ $body-background-color: $l_bluegray;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+$footer-background-color:$c-primary-light;
+$navbar-background-color:$c-primary-light;
 
-// Import only what you need from Bulma
+// Imported everything, because I was struggling to ensure I didn't miss something that I needed.  Future development could slim down package by only importing relevant modules
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
-@import "../node_modules/bulma/sass/elements/button.sass";
-@import "../node_modules/bulma/sass/elements/container.sass";
-@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/components/_all.sass";
+@import "../node_modules/bulma/sass/elements/_all.sass";
 @import "../node_modules/bulma/sass/form/_all.sass";
-@import "../node_modules/bulma/sass/components/navbar.sass";
-@import "../node_modules/bulma/sass/layout/hero.sass";
-@import "../node_modules/bulma/sass/layout/section.sass";
-@import "../node_modules/bulma/sass/components/card.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
 @import "../node_modules/bulma/sass/helpers/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";

@@ -33,7 +33,7 @@ Visit the deployed application at [aav-tech-blog](https://aav-tech-blog.herokuap
 ## Demo
 
 A .gif demo of the application is below.  
-![.gif demo of application](/public/assets/images/techBlogDemo.gif)
+![.gif demo of application](/assets/images/techBlogDemo.gif)
 
 ---
 

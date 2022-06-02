@@ -4,7 +4,7 @@
 
 ## Description
 
-This is a full stack web application. It is deployed to Heroku and uses a JawsDB database. The application allows users to post blog topics and other users may comment on the blog posts.
+This full-stack web application is deployed to Heroku and uses a JawsDB database. The application allows users to post blog topics and interact with other users via comments on the blog posts.
 
 ---
 
@@ -26,7 +26,14 @@ This application is hosted live on Heroku, no installation is required to use it
 
 ## Usage
 
-Visit the deployed application at [aav-tech-blog](https://aav-tech-blog.herokuapp.com/). In order to reach the dashboard page, or to leave a comment on a post, you must be logged in. If you do not have an account, simply follow the links to the sign up form to create a new user account and access the site.
+Visit the deployed application at [aav-tech-blog](https://aav-tech-blog.herokuapp.com/). In order to reach the dashboard page, or to leave a comment on a post, you must be logged in. If you do not have an account, follow the links to the sign up form to create a new user account and access all of the functionality of the site.
+
+---
+
+## Demo
+
+A .gif demo of the application is below.  
+![.gif demo of application](/public/assets/images/techBlogDemo.gif)
 
 ---
 
@@ -38,7 +45,7 @@ In order to contribute to this application, download the source code from the pu
 
 ## License
 
-This project is licensed under a [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under an [MIT License](https://opensource.org/licenses/MIT).
 
 ---
 

@@ -16,7 +16,15 @@ router.post('/', async (req, res) => {
         .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    res.status(400).json(err);
+    if (err.errors[0].path === 'username') {
+      console.log(err.errors[0].path);
+      res.status(409).json(err);
+    } else if (err.errors[0].path === 'password') {
+      console.log(err.errors[0].path);
+      res.status(406).json(err);
+    } else {
+      res.status(400).json(err);
+    }
   }
 });
 
@@ -29,7 +37,7 @@ router.post('/login', async (req, res) => {
     // check if entered username exists
     if (!userData) {
       res
-        .status(400)
+        .status(406)
         .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
@@ -39,7 +47,7 @@ router.post('/login', async (req, res) => {
 
     if (!validPassword) {
       res
-        .status(400)
+        .status(406)
         .json({ message: 'Incorrect username or password, please try again' });
       return;
     }

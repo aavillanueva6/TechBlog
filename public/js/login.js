@@ -48,15 +48,3 @@ function showErrorMessage() {
 document
   .querySelector('#login-error-delete')
   .addEventListener('click', hideErrorMessage);
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   (document.querySelectorAll('.notification .delete') || []).forEach(
-//     ($delete) => {
-//       const $notification = $delete.parentNode;
-
-//       $delete.addEventListener('click', () => {
-//         $notification.parentNode.removeChild($notification);
-//       });
-//     }
-//   );
-// });
